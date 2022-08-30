@@ -7,6 +7,10 @@ function clr() {
 
 }
 function clrback() {
+    let value = document.getElementById('display').value.slice(-1);
+    if(value==="+" || value ==="-" || value ==="*" || value ==="/"){
+        operator = false;
+    }
     if(calculated === false){
         document.getElementById('display').value = document.getElementById('display').value.slice(0,-1);
     }
@@ -31,9 +35,9 @@ function display(value) {
 }
 
 function calc() {
-    var p = document.getElementById("display").value;
-    var q = eval(p);
+    let value = document.getElementById("display").value;
+    let result = eval(value);
     calculated = true;
-    document.getElementById("display").value = q;
+    document.getElementById("display").value = result;
 }
 
